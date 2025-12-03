@@ -3,7 +3,7 @@ class config:
     #Client
     API_ID = 23537462
     API_HASH = "c9599a5aa61ee8ca4f5e778d20c61f24"
-    BOT_TOKEN = "7792842081:AAGZymxF5-Hbvbwl1ZdXWHIwF5DY3kbRw68"
+    BOT_TOKEN = ""
     BOT_NAME = "Yoru"
     BOT_USERNAME = "YoruXRobot"
     BOT_ID = 7792842081
@@ -36,7 +36,7 @@ class config:
     
     
     #Database
-    MONGODB_URI = "mongodb+srv://phrolovaxrobot:p0SFEz825QuqzwTi@cluster0.sy26fqm.mongodb.net/?retryWrites=true&w=majority" # Use Local Hosted Or Atlas !!
+    MONGODB_URI = "" # Use Local Hosted Or Atlas !!
     DATABASE_NAME = "cluster0"
 
     #API
