@@ -56,19 +56,19 @@ def get_paginated_buttons(page=1, items_per_page=15):
             InlineKeyboardButton("➡️", callback_data=f"area_{page + 1}")
         ])
         button_rows.append([
-            InlineKeyboardButton("🗑️", callback_data="delete")
+            InlineKeyboardButton("Back", callback_data=f"area_{current_page}")]
         ])
     elif page == total_pages:  # Last page: Back and Close vertically
         button_rows.append([
             InlineKeyboardButton("⬅️", callback_data=f"area_{page - 1}")
         ])
         button_rows.append([
-            InlineKeyboardButton("🗑️", callback_data="delete")
+            InlineKeyboardButton("Back", callback_data=f"area_{current_page}")]
         ])
     else:  # Other pages: Back, Close, Next horizontally
         button_rows.append([
             InlineKeyboardButton("⬅️", callback_data=f"area_{page - 1}"),
-            InlineKeyboardButton("🗑️", callback_data="delete"),
+            InlineKeyboardButton("Back", callback_data=f"area_{current_page}"),
             InlineKeyboardButton("➡️", callback_data=f"area_{page + 1}")
         ])
 
@@ -110,7 +110,7 @@ async def start_cmd(_, message : Message):
     await sleep(0.8)
     await x.edit_text("🕊️")
     await sleep(0.8)
-    await x.delete()
+    aait x.delete()
     
     await message.reply_cached_media(file_id = "CAACAgUAAxkBAAJuUGeBadZTdf_CjZY5sg_-DiHVwN6NAAI4FAACMBsIVIcDmYcfk1ruHgQ")    
     
@@ -179,7 +179,7 @@ async def handle_help_callback(client, query: CallbackQuery):
         await query.message.edit(
             text=f"{help_text}",
             reply_markup=InlineKeyboardMarkup([
-                [InlineKeyboardButton("Back", callback_data=f"area_{current_page}")]
+                [InlineKeyboardButton("🗑️", callback_data="delete")
             ])
         )
     except (ValueError, IndexError) as e:
