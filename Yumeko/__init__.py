@@ -1,19 +1,21 @@
-from pyrogram import Client 
+import asyncio
+asyncio.set_event_loop_policy(asyncio.DefaultEventLoopPolicy())
+
+from pyrogram import Client
 from config import config
-import uvloop
+# import uvloop   # REMOVE uvloop completely
 from cachetools import TTLCache
 import logging
 from telethon import TelegramClient
 from telegram.ext import ApplicationBuilder
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
-import time 
+import time
 from datetime import datetime
 import pytz
 
-start_time = time.time() 
+start_time = time.time()
 ist = pytz.timezone("Asia/Kolkata")
 start_time_str = datetime.now(ist).strftime("%d-%b-%Y %I:%M:%S %p")
-
 
 scheduler = AsyncIOScheduler()
 
@@ -29,16 +31,15 @@ logging.basicConfig(
     ],
 )
 
-
 logging.getLogger("httpx").setLevel(logging.ERROR)
 logging.getLogger("pyrogram").setLevel(logging.ERROR)
 logging.getLogger("telethon").setLevel(logging.ERROR)
 logging.getLogger("telegram").setLevel(logging.ERROR)
 
-
 log = logging.getLogger(__name__)
 
-uvloop.install()
+# REMOVE THIS → causes crash
+# uvloop.install()
 
 class App(Client):
     def __init__(self):
@@ -50,7 +51,7 @@ class App(Client):
             workers=config.WORKERS,
             max_concurrent_transmissions=config.MAX_CONCURRENT_TRANSMISSIONS,
             max_message_cache_size=config.MAX_MESSAGE_CACHE_SIZE
-)
+        )
 
 app = App()
 
@@ -64,24 +65,17 @@ telebot = TelegramClient(
     connection_retries=5
 )
 
-
-
 admin_cache = TTLCache(maxsize=1000000, ttl=300)
-admin_cache_ptb = TTLCache(maxsize=100000 , ttl=300)
+admin_cache_ptb = TTLCache(maxsize=100000, ttl=300)
 admin_cache_reload = {}
-BACKUP_FILE_JSON = "last_backup.json"  
+BACKUP_FILE_JSON = "last_backup.json"
 
-
-
-
-
-
-#Handler Groups
+# Handler Groups
 WATCHER_GROUP = 17
 COMMON_CHAT_WATCHER_GROUP = 100
 GLOBAL_ACTION_WATCHER_GROUP = 1
-LOCK_GROUP = 2 #ptb
-ANTI_FLOOD_GROUP = 3 #ptb
+LOCK_GROUP = 2
+ANTI_FLOOD_GROUP = 3
 BLACKLIST_GROUP = 4
 IMPOSTER_GROUP = 5
 FILTERS_GROUP = 6
@@ -94,4 +88,5 @@ CHAT_MEMBER_LOG_GROUP = 12
 SERVICE_CLEANER_GROUP = 13
 KARMA_NEGATIVE_GROUP = 14
 KARMA_POSITIVE_GROUP = 15
-JOIN_UPDATE_GROUP = 16
+JOIN_UPD
+ATE_GROUP = 16
