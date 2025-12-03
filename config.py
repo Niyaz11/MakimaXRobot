@@ -1,12 +1,12 @@
 class config:
     
     #Client
-    API_ID = 0
-    API_HASH = "0"
-    BOT_TOKEN = "0:0-0"
-    BOT_NAME = "Your_Bot_Name"
-    BOT_USERNAME = "Your_Bot_Username"
-    BOT_ID = 0
+    API_ID = 23537462
+    API_HASH = "c9599a5aa61ee8ca4f5e778d20c61f24"
+    BOT_TOKEN = "7792842081:AAGZymxF5-Hbvbwl1ZdXWHIwF5DY3kbRw68"
+    BOT_NAME = "Yoru"
+    BOT_USERNAME = "YoruXRobot"
+    BOT_ID = 7792842081
     WORKERS = 30
     MAX_MESSAGE_CACHE_SIZE = 100
     MAX_CONCURRENT_TRANSMISSIONS = 10
@@ -22,10 +22,10 @@ class config:
     OWNER_ID = 5630057244
     OWNER_USERNAME = "senpaiii10"
     SUPPORT_CHAT = -1002069412308
-    SUPPORT_CHAT_USERNAME = "Domihoes"
+    SUPPORT_CHAT_USERNAME = "EternalsHelplineBot"
     SUPPORT_CHAT_LINK = "https://t.me/Domihoes"
-    LOG_CHANNEL = -1001625036774
-    ERROR_LOG_CHANNEL = -1001625036774
+    LOG_CHANNEL = -1002456565415
+    ERROR_LOG_CHANNEL = -1002456565415
     DOWNLOAD_LOCATION = "./downloads"
     COMMAND_PREFIXES = ["/" , "!" , "." , "#" , "$" , "%" , "&" , "?"] 
     CMD_STARTERS = "/.!&#%$"
@@ -36,8 +36,8 @@ class config:
     
     
     #Database
-    MONGODB_URI = "mongodb://localhost:27017" # Use Local Hosted Or Atlas !!
-    DATABASE_NAME = "Frieren"
+    MONGODB_URI = "mongodb+srv://phrolovaxrobot:p0SFEz825QuqzwTi@cluster0.sy26fqm.mongodb.net/?retryWrites=true&w=majority" # Use Local Hosted Or Atlas !!
+    DATABASE_NAME = "cluster0"
 
     #API
     ARQ_API_KEY = "RLWCED-WZASYO-AWOLTB-ITBWTP-ARQ"
